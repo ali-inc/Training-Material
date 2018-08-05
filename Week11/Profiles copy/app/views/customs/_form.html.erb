@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-sm-6">
+    <%= form_with(model: custom, local: true) do |form| %>
+      <% if custom.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(custom.errors.count, "error") %> prohibited this custom from being saved:</h2>
+
+          <ul>
+          <% custom.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-group" >
+        <%= form.label :title_of_section %>
+        <%= form.text_field :title, class: "form-control", id: "title", maxLength:40 %>
+        <p>Remaining Characters: 40 </p>
+      </div>
+
+      <div class="form-group" >
+        <%= form.label :heading %>
+        <%= form.text_field :heading, class: "form-control", id: "heading", maxLength: 40 %>
+        <p>Maximum characters allowed: 40</p>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :body %>
+        <%= form.text_area :body, class: "form-control", id: "body", rows: 20, maxLength:600 %>
+        <p>Remaining Characters: 600</p>
+      </div>
+
+      <div class="form-group">
+        <%= form.submit "Save" , class: "btn btn-primary", id: "save-button" %>
+      </div>
+    <% end %>
+  </div>
+</div>

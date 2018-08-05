@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h1 class="header">Projects</h1>
+    <p>Click 'Create Project' to add a new project to your account.</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%id = 0 %>
+        <% @projects.each do |project| %>
+          <tr>
+            <td><%= link_to project.title, edit_project_path(project), id: "title-#{id}" %></td>
+            <td id="description"><%= project.description %></td>
+            <td><%= link_to 'Destroy', project, method: :delete, data: { title: 'Delete Entry', confirm: 'Are you sure?', id: "destroy-#{id}" } %></td>
+          </tr>
+          <%id = id + 1 %>
+        <% end %>
+          <tr>
+            <td colspan="5" class="text-center"><%= link_to 'Create Project', new_project_path, class: "btn btn-primary", id: "new-button" %></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

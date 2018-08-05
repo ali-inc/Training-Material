@@ -1,0 +1,112 @@
+<div class="row">
+  <div class="col-sm-6">
+    <%= form_with(model: profile, local: true) do |form| %>
+
+      <% if profile.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+          <ul>
+          <% profile.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end  %>
+
+      <div class="form-group">
+        <u><%= form.label :summary %></u>
+        <%= form.text_area :summary, class: "form-control", maxlength: 600, id: 'profile-form-summary'%>
+        <p>Remaining Characters: 600</p>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :stream %>
+        <br>
+        <%= form.select :stream, ['SDET', 'DevOps', 'BS Test Analyst'], class: "form-control", id: 'profile-form-stream'%>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :degree %>
+        <%= form.text_field :degree, class: "form-control", id: 'profile-form-degree' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :modules %>
+        <p>Please select each section to include in your profile.</p>
+        <%= form.collection_check_boxes :section_ids, sections, :id, :title do |box| %>
+          <div class="checkbox">
+            <%= box.label { box.check_box + box.text } %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :projects %>
+        <% puts projects %>
+        <%= form.collection_check_boxes :project_ids, projects, :id, :title do |box| %>
+          <div class="checkbox">
+            <%= box.label { box.check_box + box.text } %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :employment_history %>
+        <%= form.collection_check_boxes :employment_ids, employment, :id, :company do |box| %>
+          <div class="checkbox">
+            <%= box.label { box.check_box + box.text } %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :education %>
+        <%= form.collection_check_boxes :education_ids, education, :id, :institution do |box| %>
+          <div class="checkbox">
+            <%= box.label { box.check_box + box.text } %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :certifications %>
+        <%= form.collection_check_boxes :certification_ids, certifications, :id, :title do |box| %>
+          <div class="checkbox">
+            <%= box.label { box.check_box + box.text } %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <u><%= form.label :custom_sections %></u>
+        <%= form.collection_check_boxes :custom_ids, customs, :id, :title do |box| %>
+          <div class="checkbox">
+            <%= box.label { box.check_box + box.text } %>
+          </div>
+        <% end %>
+      </div>
+      <div class="form-group">
+        <%= form.label :status %><br>
+        <% if current_user.role == 2 %>
+          <%= form.radio_button(:status, "Pending", :checked => 'checked') %>
+          <%= form.label(:status_pending, "Pending") %><br>
+          <%= form.radio_button(:status, "Approved") %>
+          <%= form.label(:status_approved, "Approved") %><br>
+          <%= form.radio_button(:status, "Rejected") %>
+          <%= form.label(:status_rejected, "Rejected") %><br>
+          <% else %>
+          <%= form.radio_button(:status, "Draft", :checked => 'checked') %>
+          <%= form.label(:status_draft, "Draft") %><br>
+          <%= form.radio_button(:status, "Pending") %>
+          <%= form.label(:status_pending, "Pending") %><br>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <br>
+        <p>Once complete, click save to see your profile if your profile status is set to pending an admin will review and approve it. </p>
+        <%= form.submit "Save" , class: "btn btn-primary", id: 'save-button' %>
+      </div>
+    <% end %>
+  </div>
+</div>

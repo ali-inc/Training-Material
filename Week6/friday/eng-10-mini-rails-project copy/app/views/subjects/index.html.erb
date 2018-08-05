@@ -1,0 +1,14 @@
+
+<hr>
+
+<div class="content subjectscontent">
+  <% @subjects.each do |subject|  %>
+    <div class="subjectboxes">
+      <img class="logo" src="/images/logos/<%= subject.logo %>"></img>
+      <div class="subjecttext">
+        <h2><%= link_to "#{subject.title}", subject %></h2>
+        <p class="ptag" ><%= truncate(subject.summary, :length => 110) %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

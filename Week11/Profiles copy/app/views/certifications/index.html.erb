@@ -1,0 +1,29 @@
+<h1 id="certification-index-header" class="header">Certifications</h1>
+<p id="certification-index-p1" >This section lists all your certifications. This section will display your previously added, if any, certifications will be displayed.</p>
+<p id="certification-index-p2" >You can add more certifications, which will be listed here, by clicking on 'Add Certification'</p>
+
+<table id="certification-index-table" class="table">
+  <thead>
+    <tr>
+      <th id="table-title" >Title</th>
+      <th id="table-description" >Description</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%id = 0 %>
+    <% @certifications.each do |certification| %>
+      <tr>
+        <td ><%= link_to certification.title, edit_certification_path(certification), id: "title-#{id}"%></td>
+        <td id="description"><%= certification.description%></td>
+        <td><%= link_to 'Destroy', certification, method: :delete, data: { title: 'Delete Entry', confirm: 'Are you sure?', id: "destroy-#{id}" } %></td>
+      </tr>
+    <% id = id + 1 %>
+    <% end %>
+
+      <tr>
+        <td colspan="5" class="text-center"><%= link_to 'New Certification', new_certification_path, class: "btn btn-primary", id: "new-button"  %></td>
+      </tr>
+  </tbody>
+</table>

@@ -1,0 +1,12 @@
+<p>
+  <strong>Title:</strong>
+  <%= @certification.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @certification.description %>
+</p>
+
+<%= link_to 'Edit', edit_certification_path(@certification), id: "edit-button" %> |
+<%= link_to 'Back', certifications_path, id: "back-button"%>

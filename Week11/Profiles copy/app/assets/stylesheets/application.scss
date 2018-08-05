@@ -1,0 +1,405 @@
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+ @import "settings";
+ @import "bootstrap";
+ @import "pdf";
+
+ html, body {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  padding-bottom: 10vh;
+ }
+
+ h1,h2,h3,h4 {
+  font-weight: 400;
+ }
+
+.content-main{
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.navbar {
+  border-bottom: solid $brand-primary 3px;
+  margin-bottom: 0.5%;
+  position: relative;
+  left:0;
+  right:0;
+}
+
+.navbar-right {
+  margin-bottom: 0.5%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header{
+  text-decoration: underline;
+  text-decoration-color: $brand-primary;
+  margin-bottom: 2%;
+}
+
+form-group{
+  margin-left: 20%;
+}
+
+.profile-section {
+  color: $brand-primary;
+  text-decoration: underline;
+  text-decoration-color: $brand-primary;
+  font-size: 18px;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.sections-collapse {
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.table {
+  // max-width: 99vw;
+  // table-layout: fixed;
+  text-overflow: clip;
+}
+
+#summary{
+  width: 40%;
+}
+
+#description{
+  width: 75%;
+  max-width: 50vw;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+.navinput, .navlabel{
+  display: none;
+}
+
+@media only screen and (max-width: 1158px) {
+
+  .nav {
+    justify-content: center;
+  }
+  .navbar-right {
+    border-top: 2.5px solid $brand-primary;
+  }
+}
+
+@media only screen and (max-width: 1182px){
+
+  .navbar-right{
+    width: 100%;
+    border-top: 2.5px solid $brand-primary;
+    justify-content: center;
+    padding-left: 2%;
+  }
+  .navbar-right a{
+    text-align: center;
+    justify-content: center;
+  }
+
+  .navbar-header{
+    justify-content: center;
+    width: 20vw;
+  }
+
+  // .navbar {
+  //   padding-right: 2%;
+  // }
+
+}
+
+@media only screen and (max-width: 975px) {
+
+  .navbar-right{
+    width: 100%;
+    border-top: 2.5px solid $brand-primary;
+    justify-content: center;
+    padding-left: 2%;
+  }
+  .navbar-right a{
+    text-align: center;
+    justify-content: center;
+  }
+
+  .navbar-header{
+    justify-content: center;
+    width: 25vw;
+  }
+}
+
+
+// @media only screen and (max-width: 769px) {
+//   .navbar {
+//     float: none;
+//     margin: auto 0;
+//   }
+// }
+
+@media only screen and (max-width: 675px) {
+  .footer {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 704px) {
+
+  table{
+    font-size: 10px;
+  }
+
+  .navbar-header{
+    display: none;
+  }
+
+  .navbar-right li{
+    font-size: 30px;
+    display: block;
+    text-align: center;
+  }
+
+  .navbar-right a{
+    display: block;
+    font-size: 15px;
+    margin:3px;
+  }
+
+  .collapsible-menu{
+    font-size: 30px;
+    display: block;
+    cursor: pointer;
+    padding-right: 0;
+  }
+
+  .navinput#menu{
+    display: none;
+    }
+
+  .navlabel{
+    width: 30px;
+    display: block;
+    cursor: pointer;
+  }
+
+  .menu-content{
+    font-size: 17px;
+    display: flex;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .navinput:checked ~ .menu-content{
+    max-height: 100%;
+  }
+
+  .nav-items{
+    display: flex;
+    flex: auto;
+    list-style-type: none;
+    margin: 0;
+
+  }
+
+  .nav-li{
+    padding: 0px 16px;
+    text-decoration: none;
+    width: 80%;
+    text-align: center;
+  }
+
+  .nav-li-cust{
+    line-height: 0.5;
+  }
+
+  .b-m{
+    width: 35px;
+    border-radius: 10px;
+    height: 5px;
+    margin: 6px 0;
+    background-color: black;
+  }
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  font-size: 18px;
+}
+
+.modal-footer {
+  text-align: center;
+  .btn-danger {
+    background-color: $brand-primary;
+  }
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: bold;
+  color:$brand-primary;
+}
+
+@media only screen and (max-width: 360px){
+
+  table{
+    font-size: 10px;
+  }
+
+  .navbar-right li{
+    font-size: 30px;
+    display: block;
+    text-align: center;
+  }
+
+  .navbar-right a{
+    display: block;
+  }
+}
+
+#title {
+  width: 10%;
+}
+
+#secdes, #skills {
+  width: 42%;
+}
+
+.Draft span {
+  background-color: rgba(249, 146, 2, 0.4);
+  padding:5px 19px;
+  border-radius: 20px;
+}
+
+.Pending span {
+  background-color: rgba(204, 0, 0, 0.3);
+  padding:5px 10px;
+  border-radius: 20px;
+}
+
+.Approved span {
+  background-color: rgba(2, 201, 15, 0.4);
+  padding:5px;
+  border-radius: 20px;
+}
+.Rejected span {
+  background-color: rgba(255, 0, 0, 0.6);
+  padding:5px;
+  border-radius: 20px;
+  color: white;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  border-top: 2.5px solid $brand-primary;
+  padding: 0.3%;
+}
+
+.footnav{
+  text-align: center;
+  flex-wrap: wrap;
+}
+.footer-logo{
+  width: 38px;
+  height: 38px;
+}
+.fa{
+  float: right;
+  margin: 1%;
+  font-size: 50px;
+}
+.ions{
+  font-size: 30px;
+}
+
+.pendapprove{
+  border-radius: 7px;
+  display: flex;
+  flex-wrap: nowrap;
+  .approvedbt{
+    float: left;
+    display: inline;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    margin-right: 2px;
+    width: 35px;
+    text-align: center;
+    background-color: rgba(2, 201, 15, 0.4);
+    border: 0;
+  }
+  .rejectbt{
+    float: left;
+    display: inline;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    width: 35px;
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.6);
+    border: 0;
+  }
+}
+.approveshow{
+  @extend .pendapprove;
+  width: 200px;
+  margin: 0 auto;
+  .approvedbt{
+    width: 100px;
+  }
+  .rejectbt{
+    width: 100px;
+  }
+}
+.rejectbt2{
+  border-radius: 30px;
+  width: 70px;
+  border: 0;
+  background-color: rgb(255, 0, 0);
+}
+
+#tokenlink{
+  font-size: 18px;
+}
+.notice, .alert{
+  float: left;
+  margin: 0;
+  font-size: 1.5em;
+  margin-top: 2%;
+  color: #6ec843;
+}
+.messagestar{
+  &:before{
+    content: "*"
+  }
+}

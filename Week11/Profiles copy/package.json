@@ -1,0 +1,7 @@
+{
+  "name": "SpartaProfiles",
+  "private": true,
+  "dependencies": {
+    "data-confirm-modal": "^1.6.2"
+  }
+}

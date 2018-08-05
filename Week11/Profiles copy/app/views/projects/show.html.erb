@@ -1,0 +1,15 @@
+
+
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@project) , id: "edit-button"%> |
+<%= link_to 'Back', projects_path , id: "back-button"%>

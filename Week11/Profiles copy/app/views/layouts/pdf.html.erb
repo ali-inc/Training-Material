@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SpartaProfiles</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <style type="text/css">
+      <%= Rails.application.assets['application.scss'].to_s.html_safe %>
+    </style>
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

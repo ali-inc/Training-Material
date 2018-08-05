@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-sm-6">
+    <%= form_with(model: education, local: true) do |form| %>
+      <% if education.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(education.errors.count, "error") %> prohibited this education from being saved:</h2>
+
+          <ul>
+          <% education.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+
+      <div class="form-group">
+        <%= form.label :institution %>
+        <%= form.text_field :institution, class: "form-control", id: 'institution', maxLength: 75 %>
+        <p>Remaining Characters: 75 </p>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :course %>
+        <%= form.text_field :course, class: "form-control", id: 'course', maxLength: 40 %>
+        <p>Remaining Characters: 40 </p>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <%= form.label :start_date %>
+            <%= form.date_field :start_date, id: 'start-date', class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <%= form.label :end_date %>
+            <%= form.date_field :end_date, id: 'end-date', class: "form-control" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :description %>
+        <%= form.text_area :description, id: 'description', class: "form-control", maxLength:600 %>
+        <p>Remaining Characters: 600 </p>
+      </div>
+
+      <div class="form-group">
+        <%= form.submit "Save" , id: 'save-button', class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

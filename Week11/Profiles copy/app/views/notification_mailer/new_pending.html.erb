@@ -1,0 +1,17 @@
+
+<p><%= @greeting %></p>
+
+<p>
+  <u><%= @profile.name %></u> has a pending profile that needs your approval.
+</p>
+
+<p>
+  To approve <%= (@profile.name).partition(" ").first %>'s profile, please visit
+  <%= link_to "their Pending Profile", @profile %>
+</p>
+
+<p>
+  Alternatively, you can download the profile from
+  <%= link_to "here", profile_url(@profile, format: :pdf, action: :download) %>
+
+</p>

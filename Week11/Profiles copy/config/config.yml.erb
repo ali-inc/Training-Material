@@ -1,0 +1,13 @@
+defaults: &defaults
+  identity_api_url: 'https://identity.spartaglobal.academy'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+  identity_api_url: <%= ENV['IDENTITY_API_URL'] %>
+
+production:
+  <<: *defaults
+  identity_api_url: <%= ENV['IDENTITY_API_URL'] %>

@@ -1,0 +1,12 @@
+<h2> Profile Response Notification </h2>
+
+
+<p><%= "#{@greeting} #{@profile.name.partition(" ").first}," %></p>
+<p>
+  Your profile has been <%= @profile.status %>.
+</p>
+
+<p>
+  To see your profile, please visit:
+  <%= link_to "View the profile", @profile %>
+</p>
