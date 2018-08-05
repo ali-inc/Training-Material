@@ -1,0 +1,61 @@
+.vid {
+  display: inline-block;
+  float: left;
+  width: 30%;
+  /* padding: 5px; */
+  margin: 10px;
+  border: 2px solid grey;
+}
+ h2 {
+   color: red;
+ }
+
+.vid h3,
+.vid p  {
+  padding: 0 10px;
+ }
+
+ * {
+   /* border: 2px solid black; */
+ }
+
+.showing-vid {
+   float: left;
+   width: 60%;
+   margin-right: 20px;
+}
+
+.recommended-videos{
+   float: right;
+   width: 30%;
+   margin-right: 20px;
+   /* border: 2px solid black; */
+ }
+
+.recommended-videos h2 {
+  margin-top: 0;
+}
+
+ header {
+   overflow: auto;
+ }
+
+.recommended-vid {
+  /* border-top: 2px solid black; */
+  /* border-right: 2px solid black; */
+  /* border-left: 2px solid black; */
+  padding: 10px;
+}
+
+.recommended-vid:last-child {
+  border-bottom: 2px solid black;
+}
+
+.logo-button {
+  float: left;
+}
+
+.home-button {
+   float: right;
+   width: auto;
+}

@@ -1,0 +1,30 @@
+body {
+  /* background: linear-gradient(#9198e5, #000000); */
+  background: radial-gradient(ellipse at top, #e66465, transparent),
+              radial-gradient(ellipse at bottom, #4d9f0c, transparent);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+.nav-bar{
+  background: #326295;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-bar li {
+  /* color: white; */
+  display: inline-block;
+  padding: 5px;
+  border-right: 1px solid gray
+}
+
+.nav-bar li:last-child {
+  border-right: none;
+}

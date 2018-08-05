@@ -1,0 +1,23 @@
+h1 {
+  color: blue;
+  background-color: yellow;
+}
+
+section {
+  background-color: green;
+}
+
+/* .div-1 {
+  background-color: red;
+} */
+.section-1 {
+  float: left;
+  /* width: 45%; */
+  /* display: inline; */
+}
+
+.section-2 {
+  float: right;
+  /* width: 45%; */
+  /* display: inline; */
+}

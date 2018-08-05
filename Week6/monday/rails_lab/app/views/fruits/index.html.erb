@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-center">Fruits</h1>
+
+<table class="show-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Energy</th>
+      <th>Carbohydrates</th>
+      <th>Fat</th>
+      <th>Protein</th>
+      <th>Picture</th>
+      <th>Countries</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fruits.each do |fruit| %>
+      <tr>
+        <td><%= fruit.name %></td>
+        <td><%= fruit.energy %></td>
+        <td><%= fruit.carbohydrates %></td>
+        <td><%= fruit.fat %></td>
+        <td><%= fruit.protein %></td>
+        <td><img class="fruit-thumbnail" src="<%= fruit.picture %>" alt="<%= fruit.name %>"> </td>
+        <td><%= fruit.countries %></td>
+        <td><%= link_to 'Show', fruit %></td>
+        <td><%= link_to 'Edit', edit_fruit_path(fruit) %></td>
+        <td><%= link_to 'Destroy', fruit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="footer-link">
+  <%= link_to 'New Fruit', new_fruit_path %>
+</div>

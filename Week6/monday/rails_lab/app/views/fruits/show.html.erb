@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+
+      <table class="show-table">
+        <% countries_hash = eval(@fruit.countries) %>
+
+        <tr>
+          <th>Name</th>
+          <td class="fruit-name" colspan="2"><%= @fruit.name %></td>
+          <!-- <td class="fruit-img-col"rowspan="<%= countries_hash.length + 5 %>">
+            <img class="fruit-img" src="<%= @fruit.picture %>" alt="<%= @fruit.name %>">
+          </td> -->
+        </tr>
+
+        <tr>
+          <th>Energy</th>
+          <td colspan="2"><%= @fruit.energy %> kcal</td>
+        </tr>
+
+        <tr>
+          <th>Carbohydrates</th>
+          <td colspan="2"><%= @fruit.carbohydrates %> g</td>
+        </tr>
+
+        <tr>
+          <th>Fat</th>
+          <td colspan="2"><%= @fruit.fat %> g</td>
+        </tr>
+
+        <tr>
+          <th>Protein</th>
+          <td colspan="2"><%= @fruit.protein %> g</td>
+        </tr>
+
+        <tr>
+          <th rowspan='<%= countries_hash.length %>'>Producing Countries</th>
+          <td><%= countries_hash.keys[0] %></td>
+          <td><%= countries_hash.values[0] %> MT</td>
+        </tr>
+
+        <% (countries_hash.length - 1).times do |i| %>
+          <tr>
+            <td><%= countries_hash.keys[i + 1] %></td>
+            <td><%= countries_hash.values[i + 1] %> MT</td>
+          </tr>
+        <% end %>
+
+      </table>
+    </div>
+    <div class="col-md-6">
+      <!-- <img class="fruit-img img-responsive" src="<%= @fruit.picture %>" alt="<%= @fruit.name %>"> -->
+      <img class="img-responsive img-fluid" src="<%= @fruit.picture %>" alt="<%= @fruit.name %>">
+    </div>
+  </div>
+</div>
+
+
+<div class="footer-link">
+  <%= link_to 'Edit', edit_fruit_path(@fruit) %> |
+  <%= link_to 'Back', fruits_path %>
+</div>

@@ -1,0 +1,8 @@
+
+<h1>Official FIFA Online Store</h1>
+
+<% @inventory.each do |item| %>
+  <div class="">
+    <h3><a href="/<%= item.id %>"><%= item.name %></a></h3>
+  </div>
+<% end %>

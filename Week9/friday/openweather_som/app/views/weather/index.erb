@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h1 class="title">List of Selected Cities</h1>
+    </div>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">City</th>
+        <th scope="col">Temperature</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cities["list"].each do |city| %>
+        <tr>
+          <th scope="row"><%= city["id"] %></th>
+            <td>
+              <a class="link" href="/<%= city["id"].to_i %>">
+                <%= city["name"] %>
+              </a>
+            </td>
+          <td><%= city["main"]["temp"] %></td>
+          <td><%= city["weather"][0]["description"] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

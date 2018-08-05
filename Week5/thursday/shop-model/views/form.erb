@@ -1,0 +1,19 @@
+<form class="" action="/<%= @item.id %>" method="POST">
+
+  <div class="">
+    <label for="">Name</label>
+    <input type="text" name="name" placeholder="The name of the item" value="<%= @item.name %>">
+  </div>
+  <div class="">
+    <label for="">Description</label>
+    <textarea name="description" placeholder="Item's description" rows="8" cols="80"><%= @item.description %></textarea>
+  </div>
+  <div class="">
+    <input type="submit" name="" value="Save Item">
+  </div>
+
+  <% if (@item.id) %>
+    <input type="hidden" name="_method" value="PUT">
+  <% end  %>
+
+</form>

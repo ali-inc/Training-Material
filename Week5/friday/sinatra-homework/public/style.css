@@ -1,0 +1,20 @@
+body {
+  background: linear-gradient(#9198e5, #ffFF00);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  display: inline-block;
+  padding: 5px;
+  border-right: 1px solid gray
+}
+
+li:last-child {
+  border-right: none;
+}

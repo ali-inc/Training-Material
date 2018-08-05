@@ -1,0 +1,32 @@
+<%= render 'partials/navbar'%> |
+
+<%= link_to "Edit Post", edit_post_path %>
+
+<p id="notice"> <%= notice %></p>
+
+<h1><%= @post.title %></h1>
+
+<h4><%= "By: #{@post.author}" %></h4>
+
+<p><%= @post.body %></p>
+
+<%= link_to "Edit", edit_post_path(@post.id) %> |
+<%= link_to 'Delete', @post, method: :delete %>
+
+
+<hr>
+
+<h3>Comments Section</h3>
+
+<%= render partial: 'partials/comment', collection: @post.comments, as: :comment %>
+
+<hr>
+
+<h3>Add Comments</h3>
+
+<%= render partial: 'partials/comment_form', locals: {comment: @post.comments.new}  %>
+
+
+<footer>
+  <%= render 'partials/footer'%>
+</footer>

@@ -1,0 +1,13 @@
+
+<h1> <%= @item.name %> </h1>
+<div class="">
+  <%= @item.description %>
+</div>
+
+<a href="/<%= @item.id %>/edit"> Edit </a>
+<!-- <button type="button" name="button" url></button> -->
+
+<form class="" action="/<%= @item.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete">
+</form>

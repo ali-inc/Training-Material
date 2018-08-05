@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row" style="margin:50px auto;">
+    <div class="col-md-6 col-md-offset-3">
+      <!-- <h3><a href="/"><i class="fas fa-arrow-left"></i> </a></h3> -->
+      <p><a href="/"><i class="fas fa-arrow-left"></i> Back to Main Page</a></p>
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h2 class="title"><%= @city["name"] %></h2>
+          <h4 class="subtitle"><%= @city["sys"]["country"] %></h4>
+          <br>
+          <div class="row">
+            <div class="col-md-12">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Temperature</td>
+                    <td><%= @city["main"]["temp"] %>&#8451;</td>
+                  </tr>
+                  <tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Max Temperature</td>
+                      <td><%= @city["main"]["temp_max"] %>&#8451;</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Min Temperature</td>
+                      <td><%= @city["main"]["temp_min"] %>&#8451;</td>
+                    </tr>
+                    <th scope="row">4</th>
+                    <td>Description</td>
+                    <td><%= @city["weather"][0]["description"] %></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Wind Speed</td>
+                    <td><%= @city["wind"]["speed"] %> km/h</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6</th>
+                    <td>Wind Direction</td>
+                    <td><%= @city["wind"]["deg"]%>&deg;</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">7</th>
+                    <td>Humidity</td>
+                    <td><%= @city["main"]["humidity"]%>%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+</div>

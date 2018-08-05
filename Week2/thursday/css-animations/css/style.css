@@ -1,0 +1,50 @@
+.box {
+  height: 100px;
+  width: 100px;
+  /* background: pink; */
+  animation: color-change;
+  animation-duration: 5s;
+}
+.box-2 {
+  height: 100px;
+  width: 100px;
+  background: limegreen;
+  animation: move-right 5s infinite, color-change 5s infinite;
+  /* animation: color-change 5s infinite; */
+  animation-direction: alternate;
+  position: relative;
+}
+
+@keyframes move-right {
+  from {left: 300px;}
+  to {left: 600px;}
+}
+
+@keyframes color-change {
+  from {background-color: blue;}
+  to {background-color: red;}
+}
+
+.box:hover {
+  background-color: purple;
+  height: 200px;
+  width: 500px;
+  transition-duration: 5s;
+  animation-iteration-count: 3;
+}
+
+.link:hover {
+  cursor: crosshair;
+}
+
+.input-field:focus {
+    background-color: yellow;
+}
+
+.link:active {
+  color: white;
+}
+
+.input-field:focus:active {
+  background: red;
+}

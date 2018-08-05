@@ -1,0 +1,16 @@
+<%= render 'partials/navbar'%> |
+
+<%= link_to "Edit Post", edit_post_path %>
+
+<h1><%= @post.title %></h1>
+
+<h4><%= "By: #{@post.author}" %></h4>
+
+<p><%= @post.body %></p>
+
+<%= link_to "Edit", edit_post_path(@post.id) %> |
+<%= link_to 'Delete', @post, method: :delete %>
+
+<footer>
+  <%= render 'partials/footer'%>
+</footer>

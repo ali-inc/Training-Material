@@ -1,0 +1,17 @@
+body {
+  background: #fff3b5; }
+  body h1 {
+    font-family: monospace; }
+  body h2 {
+    color: red; }
+
+.container {
+  display: flex; }
+  .container .left {
+    width: 50%; }
+    .container .left img {
+      width: 100%; }
+      .container .left img:hover {
+        box-shadow: 1px 1px 10px #2661ee; }
+
+/*# sourceMappingURL=style.css.map */

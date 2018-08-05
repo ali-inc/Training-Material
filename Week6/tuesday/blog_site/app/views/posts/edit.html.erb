@@ -1,0 +1,7 @@
+<%= render 'partials/navbar'%> |
+
+<%= link_to "Original Post", post_path %>
+
+<h1><%= "Edit Page for #{@post.id}" %></h1>
+
+<%= render 'partials/form', post: @post %>

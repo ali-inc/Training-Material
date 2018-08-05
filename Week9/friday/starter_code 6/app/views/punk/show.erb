@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row" style="margin:50px auto;">
+    <div class="col-md-6 col-md-offset-3">
+      <h3><a href="/beer"><i class="fas fa-arrow-left"></i> </a></h3>
+      <div class="row text-center">
+        <div class="col-md-8">
+          <h2 class="title"><%= @beer["name"] %></h2>
+          <h3 class="subtitle"><%= @beer["tagline"] %></h3>
+          <p class="text-justify"><%= @beer["description"] %></p>
+          <div class="row">
+            <div class="col-md-12">
+              <table class="table">
+                <thead class="text-center">
+                  <th>Born</th>
+                  <th>ABV</th>
+                  <th>IBU</th>
+                  <th>EBC</th>
+                  <th>SRM</th>
+                </thead>
+                <tbody>
+                  <td>
+                    <h6><%= @brew_date %></h6>
+                  </td>
+                  <td>
+                    <h6><%= @beer["abv"] %></h6>
+                  </td>
+                  <td>
+                    <h6><%= @beer["ibu"] %></h6>
+                  </td>
+                  <td>
+                    <h6><%= @beer["ebc"] %></h6>
+                  </td>
+                  <td>
+                    <h6><%= @beer["srm"] %></h6>
+                  </td>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <p><em>Brewers Tips: <%= @beer["brewers_tips"] %></em></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img class="img-fluid" src="<%= @beer["image_url"] %>" alt="" width="80" style="margin-top:20px;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row text-center" style="margin-bottom:60px;">
+    <div class="col-md-6 col-md-offset-3">
+      <h4>Goes well with:</h4>
+      <br>
+      <ul class="list-group">
+        <% @beer["food_pairing"].each do |food| %>
+        <li class="list-group-item"><%= food %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+</div>

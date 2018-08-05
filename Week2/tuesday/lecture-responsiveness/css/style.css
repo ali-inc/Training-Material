@@ -1,0 +1,57 @@
+html {
+  font-family: sans-serif;
+  background-color: lightgrey;
+}
+
+.main-section {
+  background-color: red;
+  width: 100%;
+  text-align: center;
+}
+
+.lorem-div1,
+.lorem-div2 {
+  width: 45%;
+  display: inline-block;
+  border: 2px solid white;
+}
+
+@media screen and (max-width: 450px) {
+  .lorem-div2 {
+    display: block;
+    width: 90%;
+  }
+
+  .lorem-div1 {
+    display: none;
+  }
+
+  .main-section {
+    
+  }
+}
+
+/* @media screen and (min-width:900px) {
+  h1 {
+    color: yellow;
+  }
+
+  .lorem-div {
+    background-color: white;
+  }
+
+  .image {
+    background-color: grey;
+    height: 200px;
+    text-align: center;
+    padding-top: 150px;
+    margin: 0;
+  }
+
+}
+
+@media screen and (min-width:600px) and (max-width:900px) {
+  h1 {
+    color: red;
+  }
+} */

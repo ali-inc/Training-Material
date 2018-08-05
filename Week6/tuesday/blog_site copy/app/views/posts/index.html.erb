@@ -1,0 +1,13 @@
+<h1>Welcome to my Blog</h1>
+
+<h2>Blog Posts</h2>
+<%= link_to "Create a New Post", new_path %>
+
+<% @posts.each do |post| %>
+  <hr>
+  <%= link_to "#{post.title}", post_path(post.id) %>
+  <p><%= post.author %></p>
+  <p><%= post.body %></p>
+  <br>
+  <%= link_to "Edit", edit_path(post.id) %>
+<% end %>

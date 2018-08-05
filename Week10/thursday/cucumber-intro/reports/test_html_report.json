@@ -1,0 +1,214 @@
+[
+  {
+    "uri": "features/bbc_login.feature",
+    "id": "bbc-login",
+    "keyword": "Feature",
+    "name": "BBC Login",
+    "description": "",
+    "line": 1,
+    "elements": [
+      {
+        "id": "bbc-login;inputting-incorrect-user-credentials-shows-an-error",
+        "keyword": "Scenario",
+        "name": "Inputting incorrect user credentials shows an error",
+        "description": "",
+        "line": 3,
+        "type": "scenario",
+        "before": [
+          {
+            "match": {
+              "location": "capybara-3.3.1/lib/capybara/cucumber.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 27000
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-3.3.1/lib/capybara/cucumber.rb:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12000
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I access the BBC login page",
+            "line": 4,
+            "match": {
+              "location": "features/step_definitions/bbc_login_step_defs.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3921717000
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I input an incerrect username",
+            "line": 5,
+            "match": {
+              "location": "features/step_definitions/bbc_login_step_defs.rb:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 254797000
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I input an incorrect password",
+            "line": 6,
+            "match": {
+              "location": "features/step_definitions/bbc_login_step_defs.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 163531000
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I try to login",
+            "line": 7,
+            "match": {
+              "location": "features/step_definitions/bbc_login_step_defs.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 163609000
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I receive an error message",
+            "line": 8,
+            "match": {
+              "location": "features/step_definitions/bbc_login_step_defs.rb:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 75786000
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "capybara-3.3.1/lib/capybara/cucumber.rb:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 165634000
+            }
+          }
+        ]
+      },
+      {
+        "id": "bbc-login;inputting-incorrect-user-credentials-shows-an-error",
+        "keyword": "Scenario",
+        "name": "Inputting incorrect user credentials shows an error",
+        "description": "",
+        "line": 10,
+        "type": "scenario",
+        "before": [
+          {
+            "match": {
+              "location": "capybara-3.3.1/lib/capybara/cucumber.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 37000
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-3.3.1/lib/capybara/cucumber.rb:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13000
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I access the BBC login page",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/bbc_login_step_defs.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1508186000
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I input a cerrect username",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/bbc_login_step_defs.rb:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 194228000
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I input a correct password",
+            "line": 13,
+            "match": {
+              "location": "features/step_definitions/bbc_login_step_defs.rb:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 165447000
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I try to login",
+            "line": 14,
+            "match": {
+              "location": "features/step_definitions/bbc_login_step_defs.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1723191000
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be logged in",
+            "line": 15,
+            "match": {
+              "location": "features/step_definitions/bbc_login_step_defs.rb:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 279212000
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "capybara-3.3.1/lib/capybara/cucumber.rb:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 234536000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

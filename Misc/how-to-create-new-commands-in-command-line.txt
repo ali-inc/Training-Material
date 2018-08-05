@@ -1,0 +1,13 @@
+type: cd
+type: atom .zshrc
+
+inside the file add things like:
+
+alias work='~/Desktop/Coursework'
+alias desktop='~/Desktop'
+alias t=touch
+
+mkcd () {
+  mkdir "$1"
+  cd "$1"
+}

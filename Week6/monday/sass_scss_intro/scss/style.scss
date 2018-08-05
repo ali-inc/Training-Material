@@ -1,0 +1,28 @@
+body {
+  background: #fff3b5;
+
+  h1 {
+    font-family: monospace;
+  }
+
+  h2 {
+    color: red;
+  }
+}
+
+.container {
+  display: flex;
+
+  .left {
+    width: 50%;
+
+    img {
+      width: 100%;
+
+      &:hover {
+        box-shadow: 1px 1px 10px #2661ee;
+      }
+
+    }
+  }
+}

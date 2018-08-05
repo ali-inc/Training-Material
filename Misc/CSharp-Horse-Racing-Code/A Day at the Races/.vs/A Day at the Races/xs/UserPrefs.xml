@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{A3CAA4F7-476A-4E7A-8FA4-35CF32AEB694}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="A Day at the Races/Bet.cs">
+    <Files>
+      <File FileName="A Day at the Races/Form1.cs" Line="1" Column="1" />
+      <File FileName="A Day at the Races/Dog.cs" Line="1" Column="1" />
+      <File FileName="A Day at the Races/Guy.cs" Line="1" Column="1" />
+      <File FileName="A Day at the Races/Bet.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.A_220Day_220at_220the_220Races PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

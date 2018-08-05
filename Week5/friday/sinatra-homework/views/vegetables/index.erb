@@ -1,0 +1,8 @@
+
+<h1>Welcome To a Garden of Vegetable</h1>
+
+<% @vegetables.each do |vegetable| %>
+  <div class="">
+    <h3><a href="/vegetables/<%= vegetable[:id] %>"><%= vegetable[:title] %></a></h3>
+  </div>
+<% end %>

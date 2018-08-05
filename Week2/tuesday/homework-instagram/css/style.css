@@ -1,0 +1,55 @@
+body {
+  background-color: #fafafa;
+  box-sizing: border-box;
+  font-family: BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.phone-box {
+  /* background-image: url(../images/iphone.png); */
+  width: 454px;
+  text-align: center;
+  border: 1px dotted black;
+}
+
+.form-box {
+  border: 1px dotted black;
+  background-color: white;
+  width: 350px;
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 0 10px;
+  /* height: auto; */
+}
+
+.instagram-logo {
+  /* padding-top: 40px; */
+  width: 175px;
+  margin: 22px auto 12px;
+}
+
+.form-box h2 {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0 40px 10px;
+  color: #999
+}
+
+.facebook {
+  border: #3897f0 solid 1px;
+  border-radius: 3px;
+  background-color: #3897f0;
+  color: white;
+  font-size: 14px;
+  width: 268px;
+  height: 26px;
+}
+
+.or-line {
+  margin: 10px 40px;
+}

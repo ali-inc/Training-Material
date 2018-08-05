@@ -1,0 +1,27 @@
+#board {
+	display: block;
+	text-align: center;
+	margin: 50px auto ;
+}
+
+.row {
+	display: block;
+}
+
+.col {
+  background: #333;
+  border: 1px solid white;
+  display: inline-block;
+	height: 100px;
+	margin-right: -6px;
+  margin-top: -6px;
+  padding: 0;
+  width: 100px;
+  transition: .2s;
+}
+.col:hover {
+  background: #666;
+}
+.col:active {
+  background: #E20057;
+}

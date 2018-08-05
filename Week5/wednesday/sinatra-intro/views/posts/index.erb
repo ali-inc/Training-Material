@@ -1,0 +1,8 @@
+
+<h1>Welcome to Posts Homepage</h1>
+
+<% @posts.each do |post| %>
+  <div class="">
+    <h3><a href="/posts/<%= post.id %>"><%= post.title %></a></h3>
+  </div>
+<% end %>

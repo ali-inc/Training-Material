@@ -1,0 +1,50 @@
+<!-- <div class="container">
+<div class="row">
+<div class="col-xs-12 text-center">
+<h1 class="title">List of all beers</h1>
+</div>
+</div>
+<div class="row">
+<div class="col-md-8 col-md-offset-2">
+
+<table class="table table-striped text-center">
+<tbody>
+<% @beer.get_all_beers.each do |beer| %>
+<tr>
+<td><h4><%= beer["name"] %></h4></td>
+<td><h5><%= beer["tagline"] %></h5></td>
+<td><img class="img-fluid" src="<%= beer["image_url"] %>" alt="" style="height:100px"></td>
+<td style="width:200px;"><a class="link" href="/beer/<%= beer["id"].to_i %>">See more</a></td>
+</tr>
+<% end %>
+</tbody>
+</table>
+</div>
+
+</div>
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h1 class="title">List of all beers</h1>
+    </div>
+  </div>
+
+  <% @beer.get_all_beers.each do |beer| %>
+
+  <div class="card ">
+    <div class="img-container">
+      <img class="text-center"
+      src="<%= beer["image_url"] %>" alt="Avatar" style="width:30%;margin:auto;">
+    </div>
+    <div class="card-container">
+      <h4><b><%= beer["name"] %></b></h4>
+      <p>Architect & Engineer</p>
+      <a class="link" href="/beer/<%= beer["id"].to_i %>">See more</a>
+    </div>
+  </div>
+
+  <% end %>
+
+</div>

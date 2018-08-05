@@ -1,0 +1,14 @@
+<% if @show_message %>
+
+  <h1>This is the first time you have visited</h1>
+
+<% end %>
+
+<h1>Welcome to the homepage</h1>
+
+<% @posts.each do |post| %>
+<div>
+  <h3><a href="/<%= post.id %>"><%= post.title %></a></h3>
+  <p><%= post.body %></p>
+</div>
+<% end %>

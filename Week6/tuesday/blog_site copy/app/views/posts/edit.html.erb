@@ -1,0 +1,7 @@
+<%= link_to 'Home', home_path %>
+<%= link_to "New Post", new_path %>
+<%= link_to "Original Post", post_path %>
+
+<h1><%= "Edit Page for #{@post.id}" %></h1>
+
+<%= render 'form', post: @post %>

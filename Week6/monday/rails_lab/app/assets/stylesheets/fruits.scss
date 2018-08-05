@@ -1,0 +1,61 @@
+// Place all the styles related to the Fruits controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  // background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+  //           linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+  //           linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%) !important;
+  // background-repeat: no-repeat !important;
+  // background-size: cover !important;
+  // height: 100%
+}
+
+
+.show-table {
+    width: 90%;
+    margin: 20px auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+
+    th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px;
+      text-align: left;
+      height: 25px;
+    }
+
+    .fruit-name{
+      color: red;
+      font-weight: bold;
+    }
+}
+
+.fruit-thumbnail {
+  // width: 90%;
+  height: 200%;
+  margin: auto;
+  display: block;
+}
+
+.form-container {
+  margin: auto;
+  padding: 30px;
+  border: 4px solid black;
+  border-radius: 5%;
+  display: inline-table;
+
+}
+
+form {
+  margin: auto;
+  // align-self: center;
+  display: flex;
+}
+
+.form-heading,
+.footer-link {
+  margin: 40px auto;
+  text-align: center;
+}

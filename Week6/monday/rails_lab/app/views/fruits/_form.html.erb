@@ -1,0 +1,82 @@
+<%= form_with(model: fruit, local: true) do |form| %>
+  <% if fruit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fruit.errors.count, "error") %> prohibited this fruit from being saved:</h2>
+
+      <ul>
+      <% fruit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-container">
+    <div class="field row">
+      <div class="col-md-4">
+        <%= form.label :name %>
+      </div>
+      <div class="col">
+        <%= form.text_field :name %>
+      </div>
+    </div>
+
+    <div class="field row">
+      <div class="col-md-4">
+        <%= form.label :energy %>
+      </div>
+      <div class="col">
+        <%= form.number_field :energy %>
+      </div>
+    </div>
+
+    <div class="field row">
+      <div class="col-md-4">
+        <%= form.label :carbohydrates %>
+      </div>
+      <div class="col">
+        <%= form.text_field :carbohydrates %>
+      </div>
+    </div>
+
+    <div class="field row">
+      <div class="col-md-4">
+        <%= form.label :fat %>
+      </div>
+      <div class="col">
+        <%= form.text_field :fat %>
+      </div>
+    </div>
+
+    <div class="field row">
+        <div class="col-md-4">
+        <%= form.label :protein %>
+      </div>
+      <div class="col">
+        <%= form.text_field :protein %>
+      </div>
+    </div>
+
+    <div class="field row">
+      <div class="col-md-4">
+        <%= form.label :picture %>
+      </div>
+      <div class="col">
+        <%= form.text_field :picture %>
+      </div>
+    </div>
+
+    <div class="field row">
+      <div class="col-md-4">
+        <%= form.label :countries %>
+      </div>
+      <div class="col">
+        <%= form.text_area :countries %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  </div>
+<% end %>

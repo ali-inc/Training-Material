@@ -1,0 +1,41 @@
+body {
+  font-size: 0px;
+}
+
+h1 {
+  font-size: 40px;
+  font-family: Impact;
+  text-align: center;
+}
+
+h2 {
+  font-size: 30px;
+  font-family: serif;
+  margin-top: 60px;
+  text-align: center;
+  border: 3px solid black;
+  /* width: 200px; */
+}
+
+.dice {
+  height: 350px;
+  width: 350px;
+  margin: 0 auto;
+  margin-top: 100px;
+  border: solid black 1px;
+}
+
+.square {
+  height: 115px;
+  width: 114px;
+  display: inline-block;
+}
+
+.dot {
+  margin: 0 auto;
+  border-radius: 100%;
+  height: 74px;
+  width: 75px;
+  margin-top: 18px;
+  background-color: black;
+}

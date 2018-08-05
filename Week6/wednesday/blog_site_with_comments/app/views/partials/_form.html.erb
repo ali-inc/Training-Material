@@ -1,0 +1,28 @@
+<%= form_for(post) do |f| %>
+  <% if post.errors.any? %>
+  <h3><i><%= pluralize(post.errors.count, 'error') %> to fix</i></h3>
+  <ul>
+    <% post.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>

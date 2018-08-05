@@ -1,0 +1,8 @@
+
+<h1>Welcome To a Bowl of Fruits</h1>
+
+<% @fruits.each do |fruit| %>
+  <div class="">
+    <h3><a href="/fruits/<%= fruit[:id] %>"><%= fruit[:title] %></a></h3>
+  </div>
+<% end %>

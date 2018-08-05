@@ -1,0 +1,89 @@
+* {
+  font-family: sans-serif;
+}
+
+.flex-container-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  height: 90vh;
+}
+
+.flex-container-vertical {
+  width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.item {
+  /* height: 100px; */
+  width: 100%;
+  background-color: red;
+  /* margin: 20px; */
+  text-align: center;
+  /* line-height: 100px; */
+}
+
+.header {
+  width: 100vw;
+  background-color: #1abc9c;
+  color: white;
+  padding: 60px;
+  text-align: center;
+}
+
+.nav {
+  background-color: black;
+  height: 10vh;
+}
+
+a {
+  margin: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.zero {
+  background: pink;
+}
+
+.one {
+  background: lightblue;
+  /* flex: 1; */
+}
+
+.two {
+  background: red;
+  /* flex: 2; */
+}
+
+.three {
+  background: green;
+  /* flex: 1; */
+}
+
+.four {
+  background: yellow;
+  /* flex: 1; */
+}
+
+.large {
+  height: 100%;
+}
+
+.logo {
+  height: 20%;
+}
+
+.form {
+  height: 50%;
+}
+
+.sign-in {
+  height: 15%;
+}
+
+.apps {
+  height: 15%;
+}
