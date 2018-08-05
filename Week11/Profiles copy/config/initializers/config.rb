@@ -1,1 +1,0 @@
-APP_CONFIG = YAML.load(ERB.new(File.new("config/config.yml.erb").read).result)[Rails.env]
