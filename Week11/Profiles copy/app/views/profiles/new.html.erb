@@ -1,0 +1,15 @@
+<p><b><em>*Please first add your projects, employment, education and certifications to your account at the above links, then complete the profile section below.*</em></b></p>
+
+<h1 class="header">New Profile</h1>
+<br>
+<p>Please write a summary for your profile.</p>
+<p>Please also confirm which Sparta stream you are on and the title of your university degree.</p>
+<p><em>All fields are required.</em></p>
+<br>
+<%= render 'form', profile: @profile,
+                   projects: @projects,
+                   sections:@sections,
+                   employment: @employment,
+                   education: @education,
+                   certifications: @certifications,
+                   customs: @customs %>

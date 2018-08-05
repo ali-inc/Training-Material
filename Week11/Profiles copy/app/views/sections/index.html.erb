@@ -1,0 +1,43 @@
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+
+<div class="row">
+  <div class="col-xs-12">
+    <h1 class="header">Sections</h1>
+
+    <p>Trainers can add the Academy experience and skills in here.</p>
+    <p>Drag and Drop to rearrange the order of the sections.</p>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Skills</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody id="mySections" class="sections-group" data-url="<%= sort_sections_path %>">
+          <%id = 0 %>
+          <% @sections.each do |section| %>
+            <tr id="<%= dom_id(section) %>" class="sections-collapse">
+              <td id="title"><%= section.title %></td>
+              <td id="secdes"><%= section.description %></td>
+              <td id="skills"><%= section.skills %></td>
+              <td>
+                <p><%= link_to 'Show', section , id: "show-#{id}"%></p>
+                <p><%= link_to 'Edit', edit_section_path(section) , id: "edit-#{section.title}"%></p>
+                <p><%= link_to 'Destroy', section, method: :delete, data: { title: "Delete Section", confirm: 'Are you sure?'}, id: "delete-#{section.title}" %></p>
+              </td>
+            </tr>
+            <%id = id + 1 %>
+          <% end %>
+      </tbody>
+      <tbody>
+        <tr>
+          <td colspan="5" class="text-center"><%= link_to 'New Section', new_section_path, class: "btn btn-primary", id: "new-button" %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

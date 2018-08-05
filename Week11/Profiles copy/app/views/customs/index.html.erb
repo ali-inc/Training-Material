@@ -1,0 +1,29 @@
+<h1 class="header">Custom Sections</h1>
+
+
+<p>This section is for additional sections if you feel there's more information that you need to include as part of your profile.</p>
+<p>You can add a new section by 'New Custom Section'</p>
+<p id="notice"><%= notice %></p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%id = 0 %>
+    <% @customs.each do |custom| %>
+      <tr>
+        <td><%= link_to custom.title, edit_custom_path(custom), id: "title-#{id}" %></td>
+        <td><%= link_to 'Destroy', custom, method: :delete, data: { title: 'Delete Section', confirm: 'Are you sure?', id: "destroy-#{id}" } %></td>
+      </tr>
+    <%id = id + 1%>
+    <% end %>
+    <tr>
+      <td colspan="5" class="text-center"><%= link_to 'New Custom Section', new_custom_path, class: "btn btn-primary", id: "new-button" %></td>
+    </tr>
+  </tbody>
+</table>

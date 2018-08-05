@@ -1,0 +1,40 @@
+#pdf {
+  margin-top: 2%;
+
+  h1 {
+
+  }
+
+  h2 {
+    font-size:16px;
+    text-transform: uppercase;
+    color: $brand-primary;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $brand-primary;
+    margin-bottom:20px;
+  }
+
+  h3 {
+    font-size: 14px;
+    color: $brand-primary;
+  }
+
+  h4 {
+    font-size: 14px;
+    color: black;
+    font-weight: 500;
+  }
+
+  .skills {
+    color: $brand-primary;
+  }
+
+  article {
+    margin-bottom: 20px;
+  }
+
+  .row {
+    page-break-inside: avoid;
+  }
+
+}

@@ -1,0 +1,144 @@
+<% unless request.format.to_sym == :pdf %>
+  <br>
+  <%= link_to 'Back to Profiles', profiles_path, class: "btn btn-primary" %>
+
+  <% if current_user && current_user.role == 2 %>
+    <div class="approveshow">
+      <%= form_for(@profile, remote: true, :html => {:class => "approvedbt"})do |f| %>
+        <div><%= f.hidden_field :status %></div>
+        <div><%= f.hidden_field :status, :value => "Approved" %></div>
+        <%= f.submit "Approve", class: "btn btn-primary approvedbt", id:"profile-approve-button" %>
+      <% end %>
+      <%= form_for(@profile, remote: true, :html => {:class => "rejectbt"}) do |f| %>
+        <div><%= f.hidden_field :status %></div>
+        <div><%= f.hidden_field :status, :value => "Rejected" %></div>
+        <%= f.submit "Reject", class: "btn btn-primary rejectbt", id:"profile-reject-button" %>
+      <% end %>
+    </div>
+  <%end%>
+  <hr style="border-top: 1px solid #cdcdcd">
+<% end %>
+<div id="pdf">
+  <div class="row">
+    <div class="col-xs-9">
+      <h1><%= @profile.name %></h1>
+    </div>
+    <div class="col-xs-3">
+      <a href="/profiles"><img src="<%= asset_url 'wide-logo.png' %>" class="img-responsive"></a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6 text-center">
+      <h3>University Degree</h3>
+      <p><%= @profile.degree %></p>
+    </div>
+
+    <div class="col-xs-6 text-center">
+      <h3>Stream</h3>
+      <p><%= @profile.stream %></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h2 class="text-center">Summary</h2>
+      <p><%= @profile.summary.html_safe %></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h2 class="text-center">Academy Experience</h2>
+      <% @profile.sections.each do |section| %>
+        <article>
+            <h4><%= section.title %></h4>
+            <p><%= section.description.html_safe %></p>
+            <p><span class="skills">Skills: </span><%= section.skills.html_safe %></p>
+        </article>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h2 class="text-center">Academy Projects</h2>
+      <% @profile.projects.each do |project| %>
+        <article>
+          <h4><%= project.title %></h4>
+          <p><%= project.description.html_safe %></p>
+        </article>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h2 class="text-center">Employment History</h2>
+      <% @profile.employments.order(end_date: :desc ).each do |employment| %>
+        <article>
+          <h4><%= employment.start_date.strftime('%B %Y') %> - <%= employment.end_date.strftime('%B %Y') %></h4>
+          <h4><%= employment.company %></h4>
+          <h4><%= employment.role %></h4>
+          <p><%= employment.description.html_safe %></p>
+        </article>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h2 class="text-center">Education</h2>
+      <% @profile.educations.order(end_date: :desc ).each do |education| %>
+        <article>
+          <h4><%= education.start_date.strftime('%B %Y') %> - <%= education.end_date.strftime('%B %Y') %></h4>
+          <h4><%= education.institution %></h4>
+          <h4><%= education.course %></h4>
+          <p><%= education.description.html_safe %></p>
+        </article>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h2 class="text-center">Certifications</h2>
+      <% @profile.certifications.each do |certification| %>
+        <article>
+          <h4><%= certification.title %></h4>
+          <p><%= certification.description.html_safe %></p>
+        </article>
+      <% end %>
+    </div>
+  </div>
+
+  <% @profile.customs.each do |custom| %>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 class="text-center"><%= custom.title %></h2>
+        <article>
+          <h4><%= custom.heading %></h4>
+          <p><%= custom.body.html_safe %></p>
+        </article>
+      </div>
+    </div>
+  <% end %>
+  <% unless request.format.to_sym == :pdf %>
+  <hr style="border-top: 1px solid #cdcdcd">
+    <% if current_user && current_user.role == 2 %>
+      <div class="approveshow">
+        <%= form_for(@profile, remote: true, :html => {:class => "approvedbt"})do |f| %>
+          <div><%= f.hidden_field :status %></div>
+          <div><%= f.hidden_field :status, :value => "Approved" %></div>
+          <%= f.submit "Approve", class: "btn btn-primary approvedbt" %>
+        <% end %>
+        <%= form_for(@profile, remote: true, :html => {:class => "rejectbt"}) do |f| %>
+          <div><%= f.hidden_field :status %></div>
+          <div><%= f.hidden_field :status, :value => "Rejected" %></div>
+          <%= f.submit "Reject", class: "btn btn-primary rejectbt" %>
+        <% end %>
+      </div>
+    <%end%>
+  <% end %>
+</div>

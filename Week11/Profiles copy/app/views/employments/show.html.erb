@@ -1,0 +1,27 @@
+<p>
+  <strong>Start date:</strong>
+  <%= @employment.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @employment.end_date %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @employment.company %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @employment.role %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @employment.description %>
+</p>
+
+<%= link_to 'Edit', edit_employment_path(@employment), id: "edit-button" %> |
+<%= link_to 'Back', employments_path, id: "back-button" %>

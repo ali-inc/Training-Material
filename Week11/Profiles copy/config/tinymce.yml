@@ -1,0 +1,4 @@
+menubar: false
+toolbar:
+  - bold italic | undo redo | removeformat
+valid_elements: "p,br,b,i,b/strong,i/em"

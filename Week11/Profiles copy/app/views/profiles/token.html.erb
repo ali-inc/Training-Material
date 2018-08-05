@@ -1,0 +1,11 @@
+<h1 class="header">Share</h1>
+<h3>Link has been successfully generated, the link will be valid for 30 days</h3>
+
+<h3>Link below to share <%= @profile.name %>'s Profile: </h3>
+<br>
+
+<p id="tokenlink">http://localhost:3000/token/<%= @token.token %></p>
+<br>
+<button id="copylink" class="btn btn-primary linking">Copy link</button>
+
+<p id="copied"></p>

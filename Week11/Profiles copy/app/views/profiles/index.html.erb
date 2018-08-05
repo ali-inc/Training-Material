@@ -1,0 +1,122 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h1 class="header">Profiles</h1>
+    <p>Click 'Create a profile' to add a new profile to your account.</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Stream</th>
+          <th>Summary</th>
+          <th>Degree</th>
+          <th>Status</th>
+          <th>Approved By</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+      <tr>
+      <td colspan="7" class="text-center"><b class="profile-section" onclick="collapsesection('#approved')" id='profile-approve-collapse'>Approved Profiles</b></td>
+      <tr>
+      <tbody id="approved">
+        <% if @profiles_approved %>
+          <% @profiles_approved.each do |profile| %>
+            <tr>
+              <td><%= link_to profile.stream, profile, id: "profile-index-stream-#{profile.id}"%></td>
+              <td id="summary"><%= profile.summary %></td>
+              <td><%= profile.degree %></td>
+              <td class="<%= profile.status %>">
+                <span><%= profile.status %></span>
+              </td>
+              <td><%= profile.approved_by %></td>
+              <td>
+                <p><%= link_to 'Edit', edit_profile_path(profile), id:"edit-button#{profile.id}"%></p>
+                <p><%= link_to 'Download', profile_path(profile, format: :pdf), target: :_blank, id:"download-button#{profile.id}" %></p>
+                <p><%= link_to 'Destroy', profile, method: :delete, data: { title: 'Delete Profile', confirm: 'Are you sure?', id:"destroy-button#{profile.id}" } %></p>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+      <tr>
+        <td colspan="7" class="text-center"><b class="profile-section" onclick="collapsesection('#rejected')" id='profile-rejected-collapse'>Rejected Profiles</b></td>
+      </tr>
+      <tbody id="rejected">
+        <% if @profiles_rejected %>
+          <% @profiles_rejected.each do |profile| %>
+            <tr>
+              <td><%= link_to profile.stream, profile, id: "profile-index-stream-#{profile.id}" %></td>
+              <td id="summary"><%= profile.summary %></td>
+              <td><%= profile.degree %></td>
+              <td class="<%= profile.status %>">
+                <span><%= profile.status %></span>
+              </td>
+              <td><%= profile.approved_by %></td>
+              <td>
+                <p><%= link_to 'Edit', edit_profile_path(profile), id:"edit-button#{profile.id}" %></p>
+                <p><%= link_to 'Download', profile_path(profile, format: :pdf), target: :_blank, id:"download-button#{profile.id}" %></p>
+                <p><%= link_to 'Destroy', profile, method: :delete, data: { title: 'Delete Profile', confirm: 'Are you sure?', id:"destroy-button#{profile.id}" } %></p>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+      <tr>
+        <td colspan="7" class="text-center"><b class="profile-section" onclick="collapsesection('#pending')" id='profile-pending-collapse'>Pending Profiles</b></td>
+      </tr>
+      <tbody id="pending">
+        <% if @profiles_pending %>
+          <% @profiles_pending.each do |profile| %>
+            <tr>
+              <td><%= link_to profile.stream, profile, id: "profile-index-stream-#{profile.id}" %></td>
+              <td id="summary"><%= profile.summary %></td>
+              <td><%= profile.degree %></td>
+              <td class="<%= profile.status %>">
+                <span><%= profile.status %></span>
+              </td>
+              <td><%= profile.approved_by %></td>
+              <td>
+                <p><%= link_to 'Edit', edit_profile_path(profile), id:"edit-button#{profile.id}" %></p>
+                <p><%= link_to 'Download', profile_path(profile, format: :pdf), target: :_blank, id:"download-button#{profile.id}" %></p>
+                <p><%= link_to 'Destroy', profile, method: :delete, data: { title: 'Delete Profile', confirm: 'Are you sure?', id:"destroy-button#{profile.id}" } %></p>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+      <tr>
+        <td colspan="7" class="text-center"><b class="profile-section" onclick="collapsesection('#draft')" id='profile-draft-collapse'>Draft Profiles</b></td>
+      </tr>
+      <tbody id="draft">
+        <% if @profiles_draft %>
+          <% @profiles_draft.each do |profile| %>
+            <tr>
+              <td><%= link_to profile.stream, profile, id: "profile-index-stream-#{profile.id}" %></td>
+              <td id="summary"><%= profile.summary %></td>
+              <td><%= profile.degree %></td>
+              <td class="<%= profile.status %>">
+                <span><%= profile.status %></span>
+              </td>
+              <td><%= profile.approved_by %></td>
+              <td>
+                <p><%= link_to 'Edit', edit_profile_path(profile), id:"edit-button#{profile.id}" %></p>
+                <p><%= link_to 'Download', profile_path(profile, format: :pdf), target: :_blank, id:"download-button#{profile.id}" %></p>
+                <p><%= link_to 'Destroy', profile, method: :delete, data: { title: 'Delete Profile', confirm: 'Are you sure?', class: 'modal', id:"destroy-button#{profile.id}" } %></p>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+      <tbody>
+        <tr>
+          <td colspan="6" class="text-center"><%= link_to 'Create a profile', new_profile_path, class: "btn btn-primary", id: 'new-button' %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function collapsesection(sectionname){
+
+    $(sectionname).slideToggle();
+  }
+</script>

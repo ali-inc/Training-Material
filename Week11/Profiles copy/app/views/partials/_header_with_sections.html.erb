@@ -1,0 +1,32 @@
+<nav class="navbar collapsible-menu">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="<%= profiles_path %>">Sparta Global</a>
+  </div>
+
+  <input class="navinput" type="checkbox" id="menu">
+  <label class="navlabel" for="menu">
+    <div class="b-m"></div>
+    <div class="b-m"></div>
+    <div class="b-m"></div>
+  </label>
+
+  <div class="menu-content">
+    <ul class="nav navbar-nav nav-items">
+      <li class="nav-li"><a href="<%= profiles_path %>" id='header-profiles'>Profiles</a></li>
+      <li class="nav-li"><a href="<%= projects_path %>" id='header-projects'>Projects</a></li>
+      <li class="nav-li"><a href="<%= employments_path %>" id='header-employment'>Employment</a></li>
+      <li class="nav-li"><a href="<%= educations_path %>" id='header-education'>Education</a></li>
+      <li class="nav-li"><a href="<%= certifications_path %>" id='header-certifications'>Certifications</a></li>
+      <li class="nav-li nav-li-cust"><a href="<%= customs_path %>" id='header-custom-sections'>Custom Sections</a></li>
+      <li class="nav-li"><a href="<%= sections_path %>" id='header-sections'>Sections</a></li>
+    </ul>
+  </div>
+    <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+        <li><a href="<%= profiles_path %>">Welcome , <%= current_user.name %> (Admin)</a></li>
+        <li><a href="<%= logout_path %>" id='logout-button'>Logout</a></li>
+      <% else %>
+        <li><a href="<%= login_path %>" id='login-button'>Login</a></li>
+      <% end %>
+    </ul>
+</nav>

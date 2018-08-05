@@ -1,0 +1,17 @@
+<p>
+  <strong>Title:</strong>
+  <%= @section.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @section.description %>
+</p>
+
+<p>
+  <strong>Skills:</strong>
+  <%= @section.skills %>
+</p>
+
+<%= link_to 'Edit', edit_section_path(@section) , id: "edit-button"%> |
+<%= link_to 'Back', sections_path , id: "back-button"%>
